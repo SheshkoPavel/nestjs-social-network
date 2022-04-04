@@ -2,6 +2,7 @@ import {Module} from "@nestjs/common";
 import {SequelizeModule} from "@nestjs/sequelize";
 import { NewsModule } from './news/news.module';
 import {ConfigModule} from "@nestjs/config";
+import {NewsPost} from "./news/news.model";
 
 @Module( {
     controllers: [],
@@ -17,7 +18,7 @@ import {ConfigModule} from "@nestjs/config";
             username: process.env.POSTGRES_USER,
             password: process.env.POSTGRES_PASSWORD,
             database: process.env.POSTGRES_DB,
-            models: [],
+            models: [NewsPost],
             autoLoadModels: true
         }),
         NewsModule,
