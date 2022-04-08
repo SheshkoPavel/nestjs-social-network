@@ -6,3 +6,4 @@ export class CreateNewsPostDto {
     @ApiProperty({example: 'https://www.images/news-images-3.jpg', description: 'URL картинки'})
     readonly imageURL: string;
 }
+
