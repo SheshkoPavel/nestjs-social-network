@@ -13,7 +13,7 @@ export class NewsController {
     }
 
     @ApiOperation({summary: 'Добавление новости'})
-    @ApiResponse({status: 200, type: NewsPost})
+    @ApiResponse({status: 201, type: NewsPost})
     @Post()
     create(@Body() newPostDto: CreateNewsPostDto){
         return this.newsService.createNewsPost(newPostDto);
@@ -26,10 +26,10 @@ export class NewsController {
         return this.newsService.getAllNews();
     }
 
-    @ApiOperation({summary: 'Удаление новости по id'})
-    @ApiResponse({status: 200, description: "1: deleted, 0: error" })
+    @ApiOperation({summary: 'Удаление новости по id', description: 'After request you will get text response'})
+    @ApiResponse({status: 200, description: `0: error_Something goes wrong ;    1: News with ID ___ was deleted; ` })
     @Delete(':newsId')
-    async deletePost(@Param('newsId') newsId: number){
+    async deletePost(@Param('newsId') newsId: number ){
         const del = await this.newsService.deleteNews(newsId)
         if(del === 0) {
             return "Something goes wrong"
