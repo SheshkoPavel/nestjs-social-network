@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import {NewsPost} from "./news.model";
 import {InjectModel} from "@nestjs/sequelize";
 import {CreateNewsPostDto} from "./dto/create-news-post.dto";
+import {UpdateNewsPostDto} from "./dto/update-news-post.dto";
 
 @Injectable()
 export class NewsService {
@@ -22,6 +23,12 @@ export class NewsService {
     async deleteNews(delId: number){
         return await this.newsRepository.destroy({
             where: {id: delId}
+        });
+    }
+
+    async updateNews(dto: UpdateNewsPostDto){
+        return await this.newsRepository.update({newsText: dto.newNewsText},{
+            where: {id: dto.updateId}
         });
     }
 }
