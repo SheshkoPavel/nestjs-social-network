@@ -27,14 +27,20 @@ export class NewsController {
     }
 
     @ApiOperation({summary: 'Удаление новости по id', description: 'After request you will get text response'})
-    @ApiResponse({status: 200, description: `0: error_Something goes wrong ;    1: News with ID ___ was deleted; ` })
+    @ApiResponse({status: 200, type: DeleteNewsByIdDto })
     @Delete(':newsId')
-    async deletePost(@Param('newsId') newsId: number ){
+    async deletePost(@Param('newsId') newsId: number ): Promise<DeleteNewsByIdDto>{
         const del = await this.newsService.deleteNews(newsId)
         if(del === 0) {
-            return "Something goes wrong"
+            return {
+                responseCode: del,
+                message: "Something goes wrong"
+            }
         }
-        return `News with ID ${newsId} was deleted`
+        return {
+            responseCode: del,
+            message: `News with ID ${newsId} was deleted`
+        }
     }
 
     /*    @ApiOperation({summary: 'Удаление новости по id'})
