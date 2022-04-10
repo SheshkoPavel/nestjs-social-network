@@ -10,6 +10,6 @@ export class UpdateNewsPostDto {
 export class UpdateNewsPostResponseDto {
     @ApiProperty({example: '1', description: 'Код ответа', })
     readonly responseCode: number;
-    @ApiProperty({example: 'News with ID 28 was deleted', description: 'Сообщение о удалении', })
+    @ApiProperty({example: 'News with ID 28 was edited', description: 'Сообщение о удалении', })
     readonly message: string;
 }
