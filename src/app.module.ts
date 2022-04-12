@@ -13,7 +13,7 @@ import {NewsPost} from "./news/news.model";
         }),
         SequelizeModule.forRoot({
             dialect: 'postgres',
-            host: process.env.POSTGRES_HOST,
+            host: process.env.POSTGRES_HOST,  //To use Docker I need use "postgres" instead "localhost" here
             port: Number(process.env.POSTGRESS_PORT),
             username: process.env.POSTGRES_USER,
             password: process.env.POSTGRES_PASSWORD,
