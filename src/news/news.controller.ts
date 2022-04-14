@@ -27,7 +27,8 @@ export class NewsController {
         return this.newsService.getAllNewsASC();
     }
 
-    @ApiOperation({summary: 'Получение всех Новостей по убыванию ID'})
+    @ApiOperation({summary: 'Получение всех Новостей по убыванию ID',
+                            description: 'В ответе вы получите массив новостей по убыванию ID'})
     @ApiResponse({status: 200, type: [NewsPost]})
     @Get('desc')
     getAllDesc(){
