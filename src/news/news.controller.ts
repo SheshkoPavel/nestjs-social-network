@@ -68,14 +68,4 @@ export class NewsController {
         }
     }
 
-    /*    @ApiOperation({summary: 'Удаление новости по id'})
-    @ApiResponse({status: 200, description: "1: deleted, 0: error" })
-    @Delete()
-    async deletePost(@Body() newPostDto: DeleteNewsByIdDto){
-        const del = await this.newsService.deleteNews(newPostDto.id)
-         if(del === 0) {
-             return "Something goes wrong"
-         }
-         return `News with ID ${newPostDto.id} was deleted`
-    }*/
 }
