@@ -25,5 +25,4 @@ import {NewsPost} from "./news/news.model";
     ]
 })
 
-
 export class AppModule {}
