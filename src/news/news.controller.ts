@@ -20,11 +20,18 @@ export class NewsController {
         return this.newsService.createNewsPost(newPostDto);
     }
 
-    @ApiOperation({summary: 'Получение всех Новостей'})
+    @ApiOperation({summary: 'Получение всех Новостей по возрастанию ID'})
     @ApiResponse({status: 200, type: [NewsPost]})
     @Get()
-    getAll(){
+    getAllAsc(){
         return this.newsService.getAllNewsASC();
+    }
+
+    @ApiOperation({summary: 'Получение всех Новостей по убыванию ID'})
+    @ApiResponse({status: 200, type: [NewsPost]})
+    @Get('desc')
+    getAllDesc(){
+        return this.newsService.getAllNewsDESC();
     }
 
     @ApiOperation({summary: 'Удаление новости по id', description: 'After request you will get text response'})

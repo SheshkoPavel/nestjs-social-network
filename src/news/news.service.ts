@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import {Injectable} from '@nestjs/common';
 import {NewsPost} from "./news.model";
 import {InjectModel} from "@nestjs/sequelize";
 import {CreateNewsPostDto} from "./dto/create-news-post.dto";
@@ -18,6 +18,10 @@ export class NewsService {
     async getAllNewsASC(){
         const news = await this.newsRepository.findAll({order: [["id", "ASC"]]});
         return news;
+    }
+
+    async getAllNewsDESC(){
+        return await this.newsRepository.findAll({order: [["id", "DESC"]]});
     }
 
     async deleteNews(delId: number){
