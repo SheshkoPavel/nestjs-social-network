@@ -24,7 +24,7 @@ export class NewsController {
     @ApiResponse({status: 200, type: [NewsPost]})
     @Get()
     getAll(){
-        return this.newsService.getAllNews();
+        return this.newsService.getAllNewsASC();
     }
 
     @ApiOperation({summary: 'Удаление новости по id', description: 'After request you will get text response'})

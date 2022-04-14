@@ -15,8 +15,8 @@ export class NewsService {
         return newsPost;
     }
 
-    async getAllNews(){
-        const news = await this.newsRepository.findAll();
+    async getAllNewsASC(){
+        const news = await this.newsRepository.findAll({order: [["id", "ASC"]]});
         return news;
     }
 
