@@ -1,5 +1,7 @@
 import {ApiProperty} from "@nestjs/swagger";
 
+//Типизация с декораторами для Swagger
+
 export class UpdateNewsPostDto {
     @ApiProperty({example: '3', description: 'ID поста для изменения', })
     readonly updateId: number;

@@ -7,6 +7,8 @@ import {UpdateNewsPostDto} from "./dto/update-news-post.dto";
 @Injectable()
 export class NewsService {
 
+    //Здесь идёт работа с данными в БД
+
     constructor(@InjectModel(NewsPost) private newsRepository: typeof NewsPost) {
     }
 

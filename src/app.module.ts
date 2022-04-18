@@ -9,9 +9,9 @@ import {NewsPost} from "./news/news.model";
     providers: [],
     imports: [
         ConfigModule.forRoot({
-            envFilePath: `.${process.env.NODE_ENV}.env`
+            envFilePath: `.${process.env.NODE_ENV}.env`  //Отслеживание режима пользователь/разработчик
         }),
-        SequelizeModule.forRoot({
+        SequelizeModule.forRoot({   //Найстройка Type ORM Sequelize
             dialect: 'postgres',
             host: process.env.POSTGRES_HOST,  //To use Docker I need use "postgres" instead "localhost" here
             port: Number(process.env.POSTGRESS_PORT),

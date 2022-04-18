@@ -10,6 +10,8 @@ import {UpdateNewsPostDto, UpdateNewsPostResponseDto} from "./dto/update-news-po
 @Controller('news')
 export class NewsController {
 
+    //Сюда прилетают запросы на сервер с endpoint /news, здесь они обрабатываются и перенаправляются на service
+
     constructor(private newsService: NewsService) {
     }
 

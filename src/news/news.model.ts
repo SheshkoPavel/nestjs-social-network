@@ -5,6 +5,8 @@ interface NewsCreationAttributes {
     newsText: string
 }
 
+//По этой модели создаётся таблица в БД
+
 @Table({tableName: 'news'})
 export class NewsPost extends Model<NewsPost, NewsCreationAttributes> {
     @ApiProperty({example: '1', description: 'Уникальный идентификатор'})
